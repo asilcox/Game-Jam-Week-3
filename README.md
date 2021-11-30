@@ -1,1 +1,3 @@
 # Game-Jam-Week-3
+
+This is the repo for SGT's 3rd Game Jam. The theme for this week is: Coming Soon...
