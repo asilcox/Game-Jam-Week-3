@@ -33,7 +33,12 @@ public class mainMenuStateMachine : MonoBehaviour
 
     public void loadDevNamedScene()
     {
+        SceneManager.LoadScene(sceneInputField.text);
+    }
 
+    public void buttonDebugger()
+    {
+        Debug.Log("Clicker");
     }
 
 
