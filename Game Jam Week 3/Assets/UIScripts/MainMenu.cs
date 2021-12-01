@@ -65,4 +65,20 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void TrailerOne()
+    {
+        SceneManager.LoadScene("Trailer 1");
+    }
+
+    public void TrailerTwo()
+    {
+        SceneManager.LoadScene("Trailer 2");
+    }
+
+    public void TrailerThree()
+    {
+        SceneManager.LoadScene("Trailer 3");
+    }
+
 }
