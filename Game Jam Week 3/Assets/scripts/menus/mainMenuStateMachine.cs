@@ -10,9 +10,9 @@ public class mainMenuStateMachine : MonoBehaviour
     [SerializeField] GameObject mainPanel;
     [SerializeField] GameObject optionsPanel;
     [SerializeField] GameObject creditsPanel;
-    [SerializeField] GameObject sceneNamePanel;
 
     [SerializeField] InputField sceneInputField;
+    [SerializeField] mainStates currentMenuState;
 
     // Start is called before the first frame update
     void Start()
@@ -23,12 +23,57 @@ public class mainMenuStateMachine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        switch(currentMenuState)
+        {
+            
+            case mainStates.main:
+                {
+                    mainPanel.SetActive(true);
+                    optionsPanel.SetActive(false);
+                    creditsPanel.SetActive(false);
+
+                    break;
+                }
+            case mainStates.options:
+                {
+                    mainPanel.SetActive(false);
+                    optionsPanel.SetActive(true);
+                    creditsPanel.SetActive(false);
+                    break;
+                }
+            case mainStates.credits:
+                {
+                    mainPanel.SetActive(false);
+                    optionsPanel.SetActive(false);
+                    creditsPanel.SetActive(true);
+                    break;
+                }
+        }
     }
 
-    public void loadNamedScene()
+    public void quitGame()
     {
+        Application.Quit();
+    }
 
+    public void optionsPan()
+    {
+        currentMenuState = mainStates.options;
+    }
+
+    public void creditsPan()
+    {
+        currentMenuState = mainStates.credits;
+    }
+
+    public void mainPan()
+    {
+        currentMenuState = mainStates.main;
+    }
+
+    public void loadNamedScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
     }
 
     public void loadDevNamedScene()
@@ -44,8 +89,6 @@ public class mainMenuStateMachine : MonoBehaviour
 
     public enum mainStates
     {
-        introMain,
-        devSceneNamePanelState,
         main,
         options,
         credits,
