@@ -9,6 +9,7 @@ public class MainMenu : MonoBehaviour
     public GameObject OptionsMenu;
     public GameObject TrailersMenu;
     public GameObject CreditsMenu;
+    public GameObject QuitMenuPopUp;
 
 
     // Start is called before the first frame update
@@ -63,7 +64,8 @@ public class MainMenu : MonoBehaviour
 
     public void Quit()
     {
-        Application.Quit();
+
+       Application.Quit();
     }
 
     public void TrailerOne()
@@ -80,5 +82,13 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Trailer 3");
     }
+    public void QuitConfirm()
+    {
+        if (QuitMenuPopUp != null)
+        {
+            bool isActive = QuitMenuPopUp.activeSelf;
 
+            QuitMenuPopUp.SetActive(!isActive);
+        }
+    }
 }
