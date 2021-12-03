@@ -80,5 +80,12 @@ public class PauseMenu : MonoBehaviour
             Confirmation.SetActive(!isActive);
         }
     }
+
+    public void PlayAgain()
+    {
+        SceneManager.LoadScene("ThisLevel");
+        Debug.Log("Replaying Level...");
+    }
+
 }
 
