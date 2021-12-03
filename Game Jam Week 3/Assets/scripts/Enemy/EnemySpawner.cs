@@ -6,14 +6,13 @@ public class EnemySpawner : MonoBehaviour
 {
     [SerializeField]
     private GameObject enemySpawner;
-
     [SerializeField]
-    private float enemySpawnTimer = 3.0f;
+    private GameObject enemy;
 
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(spawnEnemy(enemySpawnTimer, enemySpawner));
+        InvokeRepeating("SpawnEnemy", 3.0f, 3.0f);
     }
 
     // Update is called once per frame
@@ -22,10 +21,8 @@ public class EnemySpawner : MonoBehaviour
         
     }
 
-    private IEnumerator spawnEnemy(float spawner, GameObject enemy)
+    private void  SpawnEnemy()
     {
-        yield return  new WaitForSeconds(spawner);
-        GameObject newEnemy = Instantiate(enemy);
-        StartCoroutine(spawnEnemy(spawner, enemy));
+        Instantiate(enemy, enemySpawner.transform.position, Quaternion.identity);
     }
 }
