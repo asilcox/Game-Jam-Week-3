@@ -93,7 +93,7 @@ public class MainMenu : MonoBehaviour
 
     public void TrailerOne()
     {
-        SceneManager.LoadScene("Trailer 1");
+        SceneManager.LoadScene("ZomLevel");
     }
 
     public void TrailerTwo()
@@ -103,7 +103,7 @@ public class MainMenu : MonoBehaviour
 
     public void TrailerThree()
     {
-        SceneManager.LoadScene("Trailer 3");
+        SceneManager.LoadScene("romComLevel");
     }
     public void QuitConfirm()
     {
