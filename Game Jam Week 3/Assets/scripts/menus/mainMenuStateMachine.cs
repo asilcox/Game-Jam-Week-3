@@ -92,7 +92,5 @@ public class mainMenuStateMachine : MonoBehaviour
         main,
         options,
         credits,
-
-
     }
 }

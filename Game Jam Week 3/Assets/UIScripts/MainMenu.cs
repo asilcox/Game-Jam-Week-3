@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
 
 public class MainMenu : MonoBehaviour
 {
@@ -10,11 +12,20 @@ public class MainMenu : MonoBehaviour
     public GameObject TrailersMenu;
     public GameObject CreditsMenu;
     public GameObject QuitMenuPopUp;
-
+    public GameObject namePanel;
+    [SerializeField] TMP_InputField nameField;
 
     // Start is called before the first frame update
     void Start()
     {
+        if(PlayerPrefs.GetString("playerName") == "")
+        {
+            namePanel.SetActive(true);
+        }
+        else
+        {
+            namePanel.SetActive(false);
+        }
         OptionsMenu.SetActive(false);
         TrailersMenu.SetActive(false);
         CreditsMenu.SetActive(false);
@@ -25,6 +36,13 @@ public class MainMenu : MonoBehaviour
     {
         
     }
+
+    public void setPlayerName()
+    {
+        PlayerPrefs.SetString("playerName", nameField.ToString());
+        namePanel.SetActive(false);
+    }
+
     public void PlayGame()
     {
         Debug.Log("LoadingGame...");
@@ -40,6 +58,11 @@ public class MainMenu : MonoBehaviour
 
             TrailersMenu.SetActive(!isActive);
         }
+    }
+
+    public void resetKeys()
+    {
+        PlayerPrefs.DeleteAll();
     }
 
     public void OpenOptionsMenu()
