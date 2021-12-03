@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/gameJamScenes/levelScenes/ZomLevel.unity
     guid: c4a6ad6c869488941b62e38cff78c73a
+  - enabled: 1
+    path: Assets/gameJamScenes/levelScenes/spyLevel.unity
+    guid: 002114ea757c56241b23f85669749e36
   m_configObjects: {}
