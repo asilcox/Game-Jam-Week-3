@@ -28,24 +28,24 @@ public class mainMenuStateMachine : MonoBehaviour
             
             case mainStates.main:
                 {
-                    mainPanel.SetActive(true);
+                    /*mainPanel.SetActive(true);
                     optionsPanel.SetActive(false);
-                    creditsPanel.SetActive(false);
+                    creditsPanel.SetActive(false);*/
 
                     break;
                 }
             case mainStates.options:
                 {
-                    mainPanel.SetActive(false);
+                    /*mainPanel.SetActive(false);
                     optionsPanel.SetActive(true);
-                    creditsPanel.SetActive(false);
+                    creditsPanel.SetActive(false);*/
                     break;
                 }
             case mainStates.credits:
                 {
-                    mainPanel.SetActive(false);
+                    /*mainPanel.SetActive(false);
                     optionsPanel.SetActive(false);
-                    creditsPanel.SetActive(true);
+                    creditsPanel.SetActive(true);*/
                     break;
                 }
         }
@@ -73,12 +73,12 @@ public class mainMenuStateMachine : MonoBehaviour
 
     public void loadNamedScene(string sceneName)
     {
-        SceneManager.LoadScene(sceneName);
+        StartCoroutine(LevelTransitionManager.Instance.CallScene(sceneName));
     }
 
     public void loadDevNamedScene()
     {
-        SceneManager.LoadScene(sceneInputField.text);
+        StartCoroutine(LevelTransitionManager.Instance.CallScene(sceneInputField.text));
     }
 
     public void buttonDebugger()
