@@ -1138,8 +1138,8 @@ MonoBehaviour:
   mainPanel: {fileID: 0}
   optionsPanel: {fileID: 0}
   creditsPanel: {fileID: 0}
-  sceneNamePanel: {fileID: 0}
   sceneInputField: {fileID: 510422414}
+  currentMenuState: 0
 --- !u!4 &811893754
 Transform:
   m_ObjectHideFlags: 0

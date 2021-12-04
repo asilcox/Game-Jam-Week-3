@@ -315,6 +315,7 @@ GameObject:
   - component: {fileID: 1211405428}
   - component: {fileID: 1211405427}
   - component: {fileID: 1211405426}
+  - component: {fileID: 1211405430}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -404,6 +405,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!225 &1211405430
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1211405425}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1535714581
 GameObject:
   m_ObjectHideFlags: 0
@@ -563,6 +576,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1813150434}
   - component: {fileID: 1813150433}
+  - component: {fileID: 1813150435}
   m_Layer: 0
   m_Name: heart_background
   m_TagString: Untagged
@@ -635,3 +649,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!225 &1813150435
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813150432}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
