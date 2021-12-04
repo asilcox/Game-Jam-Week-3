@@ -6,21 +6,22 @@ using UnityEngine.AI;
 public class ZombieEnemy : MonoBehaviour
 {
     private NavMeshAgent agent;
-    [SerializeField]
-    private Transform player;
+    
+    public Transform player;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-
+        player = GameObject.FindWithTag("Player").transform;
         agent = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
     void Update()
     {
+
         MoveToPlayer();
     }
 
