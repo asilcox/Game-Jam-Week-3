@@ -12,6 +12,20 @@ EditorBuildSettings:
     path: Assets/Scenes/UIWorkshop.unity
     guid: 75a1ed5ab8c90dd498c39b467b840852
   - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/TransitionTests/MainMenu_Test.unity
+    guid: c024ff750aceac74bb0acfe1758a1ee8
+  - enabled: 1
+    path: Assets/Scenes/TransitionTests/Trailer3_Test.unity
+    guid: 10bdafdede7ca6545a7f130e6970ef75
+  - enabled: 1
+    path: Assets/Scenes/TransitionTests/Trailer1_Test.unity
+    guid: 972e7642871ac4b4982f137a14408bc3
+  - enabled: 1
+    path: Assets/Scenes/TransitionTests/Trailer2_Test.unity
+    guid: 7e600a6d7fba6b646a08d582ccf09e4b
     path: Assets/gameJamScenes/levelScenes/levelTemplate.unity
     guid: 49431962061019943a71143b8b3a16cc
   - enabled: 1
