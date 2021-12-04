@@ -6,22 +6,46 @@ using UnityEngine.AI;
 
 public class SpyEnemy : MonoBehaviour
 {
-    private NavMeshAgent agent;
+    public NavMeshAgent agent;
 
     public float radius;
 
+    public LayerMask whatIsPlayer;
+
+    public Transform player;
+
+    public float sightRange;
+
+    public bool playerIsInRange;
+
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        player = GameObject.FindWithTag("Player").transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(!agent.hasPath)
+        playerIsInRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
+
+        if (!playerIsInRange) Patrol();
+
+        if (playerIsInRange) Chase();
+
+    }
+
+    void Patrol()
+    {
+        if (!agent.hasPath)
         {
-            agent.SetDestination (GetPoint.Instance.GetRandomPoint (transform, radius));
+            agent.SetDestination(GetPoint.Instance.GetRandomPoint(transform, radius));
         }
+    }
+
+    void Chase()
+    {
+        agent.SetDestination(player.position);
     }
 }

@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject enemySpawner;
-    [SerializeField]
-    private GameObject enemy;
+    
+    public Transform enemySpawner;
+    
+    public Transform enemy;
+
+    private void Awake()
+    {
+        enemySpawner = GameObject.FindWithTag("EnemySpawner").transform;
+        enemy = GameObject.FindWithTag("Enemy").transform;
+    }
 
     // Start is called before the first frame update
     void Start()

@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 6681120077272432868}
   m_Layer: 0
   m_Name: Spy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -176,4 +176,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ead54ad65746bb4280314e98b62896f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agent: {fileID: 6681120077272432871}
   radius: 60
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 128
+  player: {fileID: 620867083793848732, guid: e2510953c78d9124683aa0b17f0caedb, type: 3}
+  sightRange: 10
+  playerIsInRange: 0
