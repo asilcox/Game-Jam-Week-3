@@ -9,7 +9,12 @@ public class PlayerSkills : MonoBehaviour
     public GameObject barricade;
     public GameObject turret;
     public Vector3 playerPos;
-    public Vector3 playerOffset;
+
+    
+    public float coolDownBarricade = 5.0f;
+    public float coolDownTurret = 15.0f;
+    public float useSkillTimeBarricade;
+    public float useSkillTimeTurret;
 
     
     // Start is called before the first frame update
@@ -21,28 +26,32 @@ public class PlayerSkills : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // barricade.transform.position= player.transform.position;
-        //barricade.transform.eulerAngles = player.transform.eulerAngles;
         playerPos = player.transform.position;
-        
 
 
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Time.time > useSkillTimeBarricade)
         {
-            //Instantiate(barricade, transform.TransformPoint(Vector3.right*2), transform.rotation);
-           //Instantiate(barricade, player.transform.position + player.transform.forward + Vector3.right * 1, player.transform.rotation);
-           
-            //if()
-            
-            //{
-                Instantiate(barricade, new Vector3(playerPos.x, playerPos.y, playerPos.z + 2), Quaternion.AngleAxis(180, Vector3.up)); 
-            //}
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
 
+                //if()
+
+                //{
+                Instantiate(barricade, new Vector3(playerPos.x, playerPos.y, playerPos.z + 2), Quaternion.AngleAxis(180, Vector3.up));
+                useSkillTimeBarricade = Time.time + coolDownBarricade;
+                //}
+
+            }
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Time.time > useSkillTimeTurret)
         {
-            Instantiate(turret, transform.position + (transform.right*-4), transform.rotation);
+
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                Instantiate(turret, new Vector3(playerPos.x, playerPos.y, playerPos.z + 2), Quaternion.AngleAxis(180, Vector3.up));
+                useSkillTimeTurret = Time.time + coolDownTurret;
+            }
         }
     }
 }

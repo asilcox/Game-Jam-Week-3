@@ -306,7 +306,9 @@ GameObject:
   - component: {fileID: 4856146082550060}
   - component: {fileID: 95394820208651578}
   - component: {fileID: 2565330149853636466}
+  - component: {fileID: 3629984761825589344}
   - component: {fileID: 7793119275335236589}
+  - component: {fileID: 6447989464489031632}
   m_Layer: 8
   m_Name: FreeZombie
   m_TagString: Enemy
@@ -371,6 +373,21 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &3629984761825589344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1391888216552696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab242f098a12b644c85d6d54e458c19e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
+  currentHealth: 0
+  isDead: 0
 --- !u!114 &7793119275335236589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -384,6 +401,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 620867083793848732, guid: e2510953c78d9124683aa0b17f0caedb, type: 3}
+--- !u!65 &6447989464489031632
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1391888216552696}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1412685104993132
 GameObject:
   m_ObjectHideFlags: 0

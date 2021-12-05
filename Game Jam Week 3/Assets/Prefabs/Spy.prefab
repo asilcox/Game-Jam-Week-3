@@ -58,6 +58,8 @@ GameObject:
   - component: {fileID: 6681120077272432870}
   - component: {fileID: 6681120077272432871}
   - component: {fileID: 6681120077272432868}
+  - component: {fileID: 7264109898955505351}
+  - component: {fileID: 3690687908949433469}
   m_Layer: 8
   m_Name: Spy
   m_TagString: Enemy
@@ -184,3 +186,31 @@ MonoBehaviour:
   player: {fileID: 620867083793848732, guid: e2510953c78d9124683aa0b17f0caedb, type: 3}
   sightRange: 10
   playerIsInRange: 0
+--- !u!114 &7264109898955505351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6681120077272432869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab242f098a12b644c85d6d54e458c19e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
+  currentHealth: 0
+  isDead: 0
+--- !u!65 &3690687908949433469
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6681120077272432869}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}

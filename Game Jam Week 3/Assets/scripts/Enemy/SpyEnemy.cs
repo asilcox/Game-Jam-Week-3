@@ -18,11 +18,13 @@ public class SpyEnemy : MonoBehaviour
 
     public bool playerIsInRange;
 
+
     // Start is called before the first frame update
     void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.FindWithTag("Player").transform;
+
     }
 
     // Update is called once per frame
@@ -48,4 +50,6 @@ public class SpyEnemy : MonoBehaviour
     {
         agent.SetDestination(player.position);
     }
+
+   
 }

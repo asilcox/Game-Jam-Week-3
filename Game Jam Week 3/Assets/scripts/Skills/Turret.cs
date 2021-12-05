@@ -20,6 +20,10 @@ public class Turret : MonoBehaviour
 
     public float firePower = 500f;
 
+
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,9 +39,12 @@ public class Turret : MonoBehaviour
     }
 
      void Fire()
-    {
-        GameObject projectile = Instantiate(bullet, transform.position, transform.rotation);
+     {
+             GameObject projectile = Instantiate(bullet, transform.position, transform.rotation);
 
-        projectile.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0, firePower, 0));
-    }
+            projectile.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0, firePower, 0));
+
+     }
+
+ 
 }

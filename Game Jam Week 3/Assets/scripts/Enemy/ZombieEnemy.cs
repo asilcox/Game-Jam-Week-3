@@ -11,11 +11,13 @@ public class ZombieEnemy : MonoBehaviour
 
 
 
+
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindWithTag("Player").transform;
         agent = GetComponent<NavMeshAgent>();
+
     }
 
     // Update is called once per frame
