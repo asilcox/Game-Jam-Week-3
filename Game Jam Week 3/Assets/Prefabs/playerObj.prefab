@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 620867083793848735}
   - component: {fileID: 620867083793848731}
   - component: {fileID: 620867083793848730}
-  - component: {fileID: 620867083793848729}
+  - component: {fileID: 9001953613464765461}
   m_Layer: 7
   m_Name: playerObj
   m_TagString: Player
@@ -128,7 +128,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!114 &620867083793848729
+--- !u!114 &9001953613464765461
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -137,7 +137,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 620867083793848720}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a27893d2d0631344bcb1b5361290875, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f1d2ca2540fdd04289ddf4c453e07ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  player: {fileID: 620867083793848720}
+  barricade: {fileID: 7589678210717360194, guid: 38a87eeed2eff694e8274da8a22229d6, type: 3}
+  turret: {fileID: 4007647730603498516, guid: 3c66147cec000cc4e99607582b6b5482, type: 3}

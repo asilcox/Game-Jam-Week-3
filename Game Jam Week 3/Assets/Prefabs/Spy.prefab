@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6681120076276288614}
   - component: {fileID: 6681120076276288609}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 6681120077272432870}
   - component: {fileID: 6681120077272432871}
   - component: {fileID: 6681120077272432868}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Spy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
