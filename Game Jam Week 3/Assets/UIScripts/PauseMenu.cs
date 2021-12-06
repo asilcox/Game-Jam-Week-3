@@ -12,7 +12,7 @@ public class PauseMenu : MonoBehaviour
     public AudioSource OpenMenu;
     public AudioSource CloseMenu;
 
-
+    [SerializeField] string nextlevel;
     public static bool GameisPaused = false;
 
     void start()
@@ -45,6 +45,11 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         GameisPaused = false;
         CloseMenu.Play();
+    }
+
+    public void winGameAdvance()
+    {
+        SceneManager.LoadScene(nextlevel);
     }
 
     void Pause()

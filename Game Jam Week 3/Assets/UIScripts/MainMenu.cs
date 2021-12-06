@@ -40,6 +40,7 @@ public class MainMenu : MonoBehaviour
     public void setPlayerName()
     {
         PlayerPrefs.SetString("playerName", nameField.ToString());
+        PlayerPrefs.SetInt("playerLives", 3);
         namePanel.SetActive(false);
     }
 
