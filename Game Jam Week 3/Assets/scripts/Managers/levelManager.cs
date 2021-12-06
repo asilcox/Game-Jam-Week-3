@@ -21,6 +21,7 @@ public class levelManager : MonoBehaviour
     [SerializeField] GameObject losePanel;
     [SerializeField] GameObject bigLosePanel;
 
+    private livesManager lMan;
     private void Awake()
     {
         Time.timeScale = 1;
@@ -29,6 +30,7 @@ public class levelManager : MonoBehaviour
     void Start()
     {
         popcornRemaining = GameObject.FindObjectsOfType<popcornInteractable>().Length;
+        lMan = GameObject.FindObjectOfType<livesManager>();
     }
 
     // Update is called once per frame
@@ -39,9 +41,10 @@ public class levelManager : MonoBehaviour
         popcornColText.text = " Popcorn Collected " + popcornCollected.ToString();
         livesText.text = " Lives: " + PlayerPrefs.GetInt("playerLives").ToString();
 
-        if (secondsRemaining < 10)
+        if (secondsRemaining < 10 && minutesRemaining >= 1)
         {
-            timerText.text = "Time Remaining: " + minutesRemaining.ToString() + " : " + secondsRemaining.ToString("f1");
+
+            timerText.text = "Time Remaining: " + minutesRemaining.ToString() + " : " + "0" + secondsRemaining.ToString("f0");
         }
         else
         {
