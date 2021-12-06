@@ -13,7 +13,7 @@ public class popCornPopper : MonoBehaviour
         poppedCorn = new GameObject[popcornToPop];
         for (int i = 0; i < poppedCorn.Length; i++)
         {
-            GameObject clone = Instantiate<GameObject>(popcornPrefabs[0], Vector3.zero, Quaternion.identity);
+            GameObject clone = Instantiate<GameObject>(popcornPrefabs[Random.Range(0, popcornPrefabs.Length)], Vector3.zero, Quaternion.identity);
 
             poppedCorn[i] = clone;
         }

@@ -4,10 +4,11 @@ using UnityEngine.SceneManagement;
 public class livesManager : MonoBehaviour
 {
     public int livesRemaining;
-
+    private levelManager levelMan;
     // Start is called before the first frame update
     void Start()
     {
+        levelMan = GameObject.FindObjectOfType<levelManager>();
         livesRemaining = PlayerPrefs.GetInt("playerLives");
     }
 
@@ -20,18 +21,8 @@ public class livesManager : MonoBehaviour
     public void loseLife()
     {
         livesRemaining--;
-
-        if (livesRemaining < 1)
-        {
-            
-            SceneManager.LoadScene("MainMenu");
-        }
-        else
-        {
-            var sceneName = SceneManager.GetActiveScene().name;
-            SceneManager.LoadScene(sceneName);
-            PlayerPrefs.SetInt("playerLives", livesRemaining);
-        }
+        PlayerPrefs.SetInt("playerLives", livesRemaining);
+        levelMan.loseGame();
 
 
     }

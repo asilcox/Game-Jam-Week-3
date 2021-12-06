@@ -6,7 +6,6 @@ public class EnemySpawner : MonoBehaviour
 {
     
     public Transform enemySpawner;
-    
     public Transform enemy;
 
     private void Awake()

@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
+using UnityEngine;
 public class levelManager : MonoBehaviour
 {
     [Header("Popcorn Values")]
@@ -10,7 +7,6 @@ public class levelManager : MonoBehaviour
     [SerializeField] int popcornCollected;
 
     [Header("Timer Values")]
-    [SerializeField] float maxTime;
     [SerializeField] float secondsRemaining;
     [SerializeField] int minutesRemaining;
 
@@ -18,10 +14,17 @@ public class levelManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI popcornRemText;
     [SerializeField] TextMeshProUGUI popcornColText;
     [SerializeField] TextMeshProUGUI timerText;
+    [SerializeField] TextMeshProUGUI livesText;
 
     [Header("Win and Lose panels")]
     [SerializeField] GameObject winPanel;
     [SerializeField] GameObject losePanel;
+    [SerializeField] GameObject bigLosePanel;
+
+    private void Awake()
+    {
+        Time.timeScale = 1;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -34,24 +37,35 @@ public class levelManager : MonoBehaviour
         //Text settings
         popcornRemText.text = " Popcorn remaining: " + popcornRemaining.ToString();
         popcornColText.text = " Popcorn Collected " + popcornCollected.ToString();
-        timerText.text = "Time Remaining: " + minutesRemaining.ToString() + " : " + secondsRemaining.ToString("f0");
+        livesText.text = " Lives: " + PlayerPrefs.GetInt("playerLives").ToString();
+
+        if (secondsRemaining < 10)
+        {
+            timerText.text = "Time Remaining: " + minutesRemaining.ToString() + " : " + secondsRemaining.ToString("f1");
+        }
+        else
+        {
+            timerText.text = "Time Remaining: " + minutesRemaining.ToString() + " : " + secondsRemaining.ToString("f0");
+        }
+
+
 
         //Timer
         secondsRemaining = secondsRemaining - 1 * Time.deltaTime;
 
-        if(secondsRemaining <= 0 && minutesRemaining >= 1)
+        if (secondsRemaining <= 0 && minutesRemaining >= 1)
         {
             secondsRemaining = 60;
             minutesRemaining--;
         }
 
-        if(secondsRemaining <= 0 && minutesRemaining <= 0)
+        if (secondsRemaining <= 0 && minutesRemaining <= 0)
         {
-
+            loseGame();
         }
 
         //WinConditions
-        if(popcornRemaining <= 0 && secondsRemaining >= 1)
+        if (popcornRemaining <= 0 && secondsRemaining >= 1)
         {
             winGame();
         }
@@ -66,8 +80,18 @@ public class levelManager : MonoBehaviour
 
     public void loseGame()
     {
-        losePanel.SetActive(true);
-        Time.timeScale = 0;
+        if (PlayerPrefs.GetInt("playerLives") <= 0)
+        {
+            bigLosePanel.SetActive(true);
+            Time.timeScale = 0;
+        }
+        else
+        {
+            losePanel.SetActive(true);
+            Time.timeScale = 0;
+        }
+
+
     }
 
     public void winGame()

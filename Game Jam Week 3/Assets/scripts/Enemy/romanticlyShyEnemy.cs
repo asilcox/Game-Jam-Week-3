@@ -15,10 +15,6 @@ public class romanticlyShyEnemy : MonoBehaviour
     [SerializeField] Transform playerTarget;
     [SerializeField] LayerMask maskLayer;
     private NavMeshAgent shyAgent;
-
-
-
-
     // Start is called before the first frame update
     void Start()
     {

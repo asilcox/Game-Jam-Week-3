@@ -18,7 +18,9 @@ public class MainMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(PlayerPrefs.GetString("playerName") == "")
+        PlayerPrefs.SetInt("playerLives", 3);
+
+        if (PlayerPrefs.GetString("playerName") == "")
         {
             namePanel.SetActive(true);
         }
@@ -40,7 +42,7 @@ public class MainMenu : MonoBehaviour
     public void setPlayerName()
     {
         PlayerPrefs.SetString("playerName", nameField.ToString());
-        PlayerPrefs.SetInt("playerLives", 3);
+        
         namePanel.SetActive(false);
     }
 

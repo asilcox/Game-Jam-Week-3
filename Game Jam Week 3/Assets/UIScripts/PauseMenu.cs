@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -20,7 +18,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         OptionsMenu.SetActive(false);
         PauseMenuUI.SetActive(false);
-}
+    }
 
     void Update()
     {
@@ -88,7 +86,9 @@ public class PauseMenu : MonoBehaviour
 
     public void PlayAgain()
     {
-        SceneManager.LoadScene("ThisLevel");
+        var sceneName = SceneManager.GetActiveScene().name;
+        Time.timeScale = 1;
+        SceneManager.LoadScene(sceneName);
         Debug.Log("Replaying Level...");
     }
 
